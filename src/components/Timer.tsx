@@ -13,7 +13,7 @@ export default function Timer({ duration, label, onComplete }: TimerProps) {
   const [timeLeft, setTimeLeft] = useState<number>(duration);
 
   useEffect(() => {
-    let interval: NodeJS.Timeout | undefined;
+    let interval: ReturnType<typeof setInterval> | undefined;
 
     if (timeLeft > 0) {
       interval = setInterval(() => {
